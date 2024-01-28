@@ -36,29 +36,24 @@ document.addEventListener("mousemove",(e) => {
   cirsor.style.top = e.y + "px";
   
 });
-// document.addEventListener('#main').addEventListener('mouseenter',(e) => {
-//   cirsor.style.opacity = 1;
-// });
-
-
 
 let boxes = document.querySelectorAll('.box');
 boxes.forEach((elem) => {
-  
+  let image = elem.getAttribute('data-image');
   elem.addEventListener('mouseenter', (e) => {
-    let image = elem.getAttribute('data-image');
-  //  elem.style.backgroundColor = 'red';
-   cirsor.style.width = '300px';
-   cirsor.style.height = '250px';
-   cirsor.style.borderRadius = '0';
-   cirsor.style.backgroundImage = `URL(${image})`;
-   cirsor.style.mixblendMode = '0'
+    cirsor.style.width = '320px';
+    cirsor.style.height = '250px';
+    cirsor.style.borderRadius = '0%';
+    cirsor.style.mixBlendMode = 'normal';
+    cirsor.style.backgroundImage = `URL(${image})`;
+
   });
-  elem.addEventListener('mouseleave', () => {
-    elem.style.backgroundColor = 'transparent';
+  elem.addEventListener('mouseleave', (e) => {
     cirsor.style.width = '15px';
-   cirsor.style.height = '15px';
-   cirsor.style.borderRadius = '50%';
-   cirsor.style.backgroundImage = 'none'
+    cirsor.style.height = '15px';
+    cirsor.style.borderRadius = '50%';
+    cirsor.style.backgroundImage = 'none';
+    cirsor.style.mixBlendMode = 'difference';
+    
   })
 })
